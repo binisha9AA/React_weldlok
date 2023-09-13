@@ -38,7 +38,7 @@ header {
   position: relative;
 }
 /* Navigation starts here*/
-/* .navigation {
+.navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,6 +87,11 @@ header {
   width: 14px;
 }
 .right_nav .phone_logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 40px;
+  max-height: 40px;
   padding: 13px;
   background: linear-gradient(
     180deg,
@@ -95,12 +100,12 @@ header {
   );
   border-radius: 50px;
   border: 2px solid rgba(255, 255, 255, 0.1);
-} */
+}
 /* Navigation ends here */
 
 /* Hero section */
 .hero_section {
-  width: calc(100% - 300px);
+  width: 100%;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -182,7 +187,6 @@ header {
   text-align: center;
   background-color: #f5f5f5;
   max-width: 373px;
-  position: relative;
   transform: translateY(50%);
   height: auto;
   transition: transform 0.2s ease-in-out;
@@ -191,11 +195,12 @@ header {
   position: absolute;
   background-color: var(--bright-red);
   padding: 7px;
-  top: 32%;
+  top: 95px;
   left: 85%;
 }
 .card .card_title {
   padding: 20px;
+  position: relative;
 }
 .card .card_name {
   display: flex;
@@ -203,12 +208,19 @@ header {
   gap: 6px;
   /* margin-bottom: 12px; */
 }
+.card:hover .card_arrow {
+  max-width: 40px;
+  max-height: 40px;
+}
 .card_name h3,
 .about_text h3 {
   text-transform: uppercase;
 }
 .card .card_image {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card:hover {
@@ -216,6 +228,7 @@ header {
 }
 .card:hover p {
   opacity: 100;
+  text-align: left;
 }
 .card_title {
   background-color: #fff;
@@ -231,13 +244,14 @@ header {
 .card p {
   font-size: 14px;
   opacity: 0;
+
   transition: opacity 0.3s ease-in-out;
 }
 .card:hover .card_arrow {
   content: url('../images/right-arrow.svg');
   position: absolute;
-  top: 40%;
-  left: 77%;
+  top: 92px;
+  left: 82%;
 }
 
 /* section two starts here */
@@ -369,7 +383,7 @@ header {
 }
 /* section four starts here */
 .sectionfour {
-  background-image: url('../images/who.svg');
+  background-image: url('../assets/images/who.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -472,7 +486,7 @@ header {
   color: var(--light-gray);
 }
 .background_s5_img {
-  background-image: url('../images/quote.jpg');
+  background-image: url('../assets/images/quote.jpg');
   padding: 96px;
   background-repeat: no-repeat;
   background-position: center;
@@ -721,6 +735,14 @@ header {
   text-transform: uppercase;
 }
 /* footer starts here */
+.footer_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_top .s5_left {
+  max-width: 576px;
+}
 .footer_wrapper {
   display: flex;
   flex-direction: column;
@@ -816,16 +838,25 @@ header {
 }
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
+  .s5_left h3 span {
+    display: block;
+  }
+  .footer_top {
+    flex-direction: column;
+  }
+  .footer_wrapper {
+    gap: 20px;
+  }
+  .card_arrow {
+    left: 70% !important;
+  }
   .view_product a {
     justify-content: center;
   }
   .pdf_download {
     flex-direction: column;
   }
-  .card:hover .card_arrow {
-    top: 60%;
-    right: 7%;
-  }
+
   .link_title h2,
   .subscribe_text h2 {
     font-size: 20px;
@@ -843,17 +874,39 @@ header {
   .news_events {
     border: 1px solid var(--light-gray);
   }
+  .news_articles,
+  .bottom_news_section .news_headline {
+    width: 100%;
+    max-width: unset;
+  }
   .news_image {
     width: 100%;
     object-fit: contain;
     object-position: center;
   }
-  .news_image img {
+  .pdf_product_name h2 {
+    font-size: 20px;
+  }
+  .news_image img,
+  .article_image {
     width: 100%;
+  }
+  .article_image img,
+  .article_image img {
+    max-width: unset;
   }
   .news_articles .news_events {
     flex-direction: column;
     align-items: center;
+  }
+  .main_content .product {
+    align-items: center;
+  }
+  .s3_grid_card .product p {
+    text-align: center;
+  }
+  .s3_grid_card {
+    max-width: unset;
   }
   .event_date {
     justify-content: center;
@@ -1037,12 +1090,25 @@ header {
   }
   .mobile_nav_ph {
     padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 40px;
+    max-height: 40px;
+    padding: 13px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.9) 16.37%,
+      rgba(0, 0, 0, 0.36) 100%
+    );
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
   }
   .nav {
     display: none;
   }
   .card_arrow {
-    top: 20%;
+    top: 54%;
     left: 80%;
     padding: 4px;
   }
@@ -1053,8 +1119,10 @@ header {
     max-width: 60%;
   }
   .card:hover .card_arrow {
-    top: 50%;
-    left: 74%;
+    top: 115px;
+    left: 80%;
+    max-width: 32px;
+    max-height: 32px;
   }
   .s6_wrapper {
     flex-direction: column;
@@ -1143,13 +1211,20 @@ header {
   }
 }
 @media (max-width: 768px) {
+  .about_buttons {
+    text-align: center;
+  }
+  .wrapper .image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
   .new_container {
     padding: 0 12px;
   }
-  .card_arrow {
-    top: 0%;
-    left: unset;
-    right: 0%;
+
+  .card:hover .card_arrow {
+    top: 85%;
+    left: 75%;
   }
   .top_news_section {
     align-items: center;
@@ -1195,7 +1270,7 @@ header {
     flex-direction: column;
   }
   .wrapper .image {
-    width: 300px;
+    /* width: 300px; */
     margin-inline: auto;
   }
 
@@ -1220,9 +1295,22 @@ header {
   }
 }
 @media (max-width: 576px) {
+  .card_arrow {
+    top: 45%;
+    left: 75px;
+  }
+  .card .card_title {
+    padding: 5px;
+  }
+
+  .hero_section h1,
+  .hero_section p {
+    max-width: 350px;
+  }
+
   .card:hover .card_arrow {
-    top: 57%;
-    left: 70%;
+    top: 90%;
+    left: 65%;
   }
   .show-mobile-nav {
     width: 250px;
@@ -1246,6 +1334,7 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 60%;
+    font-size: 16px;
   }
   .card_name .card_logo {
     max-width: 24px;
@@ -1263,4 +1352,22 @@ header {
 
 .show-mobile-nav {
   display: block;
+}
+@media (max-width: 420px) {
+  .card_name h3 {
+    display: none;
+  }
+  .card_name .card_logo {
+    margin-inline: auto;
+  }
+  .card_arrow {
+    top: 37%;
+    left: 25% !important;
+  }
+  .card:hover .card_arrow {
+    left: 55% !important;
+  }
+  .card:hover p {
+    height: 150px;
+  }
 }
