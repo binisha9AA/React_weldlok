@@ -1,41 +1,10 @@
-import React, { useEffect } from 'react'; 
+import React, { useEffect } from 'react';
 import logo from '../../assets/images/logo.svg';
 import phone from '../../assets/images/phone.svg';
-import { Redbutton } from '../Buttons/redbutton';
-import rightArrow from '../../assets/images/arrow-right-up-line.svg';
-import industr from '../../assets/images/industrial img.png';
-import industrLogo from '../../assets/images/Industrial.svg';
-import civil from '../../assets/images/Civil.svg';
-import arch from '../../assets/images/Architectural.svg';
+import arrowDow from '../../assets/images/arrowDown.svg';
+import { HeroSection } from './HeroSection';
 
 export const Header = () => {
-  const navbar = [
-    {
-      id: 1, // Unique IDs for each item
-      navlink: 'Home',
-    },
-    {
-      id: 2,
-      navlink: 'Our Products',
-    },
-    {
-      id: 3,
-      navlink: 'Customers',
-    },
-    {
-      id: 4,
-      navlink: 'About us',
-    },
-    {
-      id: 5,
-      navlink: 'News',
-    },
-    {
-      id: 6,
-      navlink: 'Contact Us',
-    },
-  ];
-
   // Initialize hamburger and navMenu as useRef
   const hamburgerRef = React.useRef(null);
   const navMenuRef = React.useRef(null);
@@ -81,15 +50,42 @@ export const Header = () => {
                 </a>
               </div>
               <nav className="nav">
-                <div className="mid_nav">
-                  <ul className="nav-menu" ref={navMenuRef}>
-                    {navbar.map((nav) => (
-                      <li key={nav.id}>
-                        <a href="" className="nav-link">
-                          {nav.navlink}
-                        </a>
-                      </li>
-                    ))}
+                <div class="mid_nav">
+                  <ul class="nav-menu">
+                    <li>
+                      <a href="" class="nav-link">
+                        Home
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#our_products" class="nav-link">
+                        Our Products <img src={arrowDow} />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="nav-link">
+                        Customers
+                        <img src={arrowDow} />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#about" class="nav-link">
+                        About us
+                        <img src={arrowDow} />
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="#news" class="nav-link">
+                        News
+                        <img src={arrowDow} />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#footer" class="nav-link">
+                        Contact us
+                      </a>
+                    </li>
                   </ul>
                 </div>
                 <div className="right_nav">
@@ -157,71 +153,8 @@ export const Header = () => {
           </div>
         </header>
         {/* hero section starts here  */}
-        <div className="hero_section">
-          <h1>High quality, reliable and proven products and systems</h1>
-          <p>
-            The Weldlok brand guarantees the right solution for all customers.
-          </p>
 
-          <Redbutton buttonText={'Find Out More'} />
-        </div>
-        <div className="grid_cards">
-          <div className="container">
-            <div className="grid-container">
-              <div className="card">
-                <div className="card_title">
-                  <div className="card_name">
-                    <img src={industrLogo} alt="" className="card_logo" />
-                    <h3>industrial</h3>
-                    <img src={rightArrow} alt="arrow" className="card_arrow" />
-                  </div>
-
-                  <p>
-                    We ensure our clients’ success by delivering the highest
-                    quality products.
-                  </p>
-                </div>
-                <div className="card_image">
-                  <img src={industr} alt="" />
-                </div>
-              </div>
-              <div className="card">
-                <div className="card_title">
-                  <div className="card_name">
-                    <img src={civil} alt="" className="card_logo" />
-                    <h3>Civil</h3>
-                    <img src={rightArrow} alt="arrow" className="card_arrow" />
-                  </div>
-
-                  <p>
-                    We ensure our clients’ success by delivering the highest
-                    quality products.
-                  </p>
-                </div>
-                <div className="card_image">
-                  <img src={industr} alt="" />
-                </div>
-              </div>
-              <div className="card">
-                <div className="card_title">
-                  <div className="card_name">
-                    <img src={arch} alt="" className="card_logo" />
-                    <h3>aRCHITECTURAL</h3>
-                    <img src={rightArrow} alt="arrow" className="card_arrow" />
-                  </div>
-
-                  <p>
-                    We ensure our clients’ success by delivering the highest
-                    quality products.
-                  </p>
-                </div>
-                <div className="card_image">
-                  <img src={industr} alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeroSection />
       </div>
 
       {/* <Navigation /> */}

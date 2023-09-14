@@ -54,8 +54,8 @@ export const OurProducts = () => {
                   <div className="gridimg_card1 s3_grid_card" key={product.id}>
                     <img src={product.image} alt="" />
                     <div className="product">
-                      <h3>{product.title}</h3>
-                      <p>{product.texts}</p>
+                      <h3 className="product--name">{product.title}</h3>
+                      <p className="product--description">{product.texts}</p>
                     </div>
                     <ViewProdcutButton productText={'view product'} />
                   </div>

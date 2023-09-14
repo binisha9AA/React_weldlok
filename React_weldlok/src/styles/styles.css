@@ -123,7 +123,7 @@ header {
   font-weight: 600;
   line-height: 70px;
 }
-.hero_section p {
+.hero_section .hero--paragraph--section {
   text-align: center;
 }
 .btn p {
@@ -209,11 +209,8 @@ header {
   gap: 6px;
   /* margin-bottom: 12px; */
 }
-.card:hover .card_arrow {
-  max-width: 40px;
-  max-height: 40px;
-}
-.card_name h3,
+
+.card_name .card--name--title,
 .about_text h3 {
   text-transform: uppercase;
 }
@@ -253,6 +250,8 @@ header {
   position: absolute;
   top: 92px;
   left: 82%;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 /* section two starts here */
@@ -282,7 +281,7 @@ header {
   line-height: 28px;
   margin-bottom: 12px;
 }
-.about_text .about_title h4 {
+.about_text .about_title {
   font-size: 30px;
   font-weight: 700;
   line-height: 40px;
@@ -333,11 +332,11 @@ header {
   font-weight: 600;
   text-transform: uppercase;
 }
-.solution p {
+.solution .section--sub--name {
   font-size: 16px;
   line-height: 28px;
 }
-.solution span {
+.solution .sub__name__elem {
   font-size: 44px;
   font-weight: 600;
   line-height: 52px;
@@ -368,13 +367,13 @@ header {
   cursor: pointer;
   gap: 12px;
 }
-.s3_grid_card .product h3 {
+.s3_grid_card .product .product--name {
   font-size: 26px;
   font-weight: 600;
   line-height: 32px;
   text-transform: capitalize;
 }
-.s3_grid_card .product p {
+.s3_grid_card .product .product--description {
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
@@ -478,7 +477,7 @@ header {
   flex-direction: column;
   gap: 24px;
 }
-.man_intro h4 {
+.man_intro .man_intro__name {
   color: var(--bright-red);
   font-size: 20px;
   font-style: normal;
@@ -549,13 +548,13 @@ header {
   justify-content: space-between;
   gap: 27px;
 }
-.project_title h2 {
+.project_title .project_title__name {
   font-size: 32px;
   font-weight: 600;
   line-height: 40px;
   color: var(--white);
 }
-.project_paragraph p {
+.project_paragraph .project_paragraph__elem {
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
@@ -608,7 +607,7 @@ header {
   display: flex;
   gap: 16px;
 }
-.brochers_product p {
+.brochers_product .brochures--name {
   color: var(--white);
   font-size: 22px;
   font-weight: 600;
@@ -635,7 +634,7 @@ header {
 .pdf_download .product_view > * {
   color: var(--white);
 }
-.pdf_product_name h2 {
+.pdf_product_name .brocheur--title {
   font-size: 26px;
 
   font-weight: 600;
@@ -779,7 +778,7 @@ header {
 .footer_grid .company img {
   max-width: 200px;
 }
-.company p,
+.company .footer--paragraph,
 .page_links ul li {
   font-size: 16px;
   font-weight: 400;
@@ -829,8 +828,8 @@ header {
   display: flex;
   justify-content: space-between;
 }
-.copyright_text p,
-.policy p {
+.copyright_text .copyright_text__trademark,
+.policy .policy__terms {
   color: var(--white);
   font-size: 14px;
   font-weight: 400;
@@ -887,7 +886,7 @@ header {
     object-fit: contain;
     object-position: center;
   }
-  .pdf_product_name h2 {
+  .pdf_product_name .brocheur--title {
     font-size: 20px;
   }
   .news_image img,
@@ -905,7 +904,7 @@ header {
   .main_content .product {
     align-items: center;
   }
-  .s3_grid_card .product p {
+  .s3_grid_card .product .product--description {
     text-align: center;
   }
   .s3_grid_card {
@@ -915,7 +914,7 @@ header {
     justify-content: center;
   }
   .event_title p,
-  .project_paragraph p {
+  .project_paragraph .project_paragraph__elem {
     text-align: center;
   }
   .event_information .view_product a {
@@ -1115,7 +1114,7 @@ header {
     left: 80%;
     padding: 4px;
   }
-  .card_name h3 {
+  .card_name .card--name--title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1161,7 +1160,7 @@ header {
   .about_counts span {
     font-size: 14px;
   }
-  .about_text .about_title h4 {
+  .about_text .about_title {
     font-size: 18px;
   }
   .about_counts .count_num {
@@ -1179,10 +1178,10 @@ header {
   .solution span {
     font-size: 32px;
   }
-  .s3_grid_card .product h3 {
+  .s3_grid_card .product .product--name {
     font-size: unset;
   }
-  .s3_grid_card .product p {
+  .s3_grid_card .product .product--description {
     font-size: 14px;
   }
   .view_product a span {
@@ -1192,10 +1191,10 @@ header {
   .left_feedback_card p {
     font-size: 32px;
   }
-  .man_intro h4 {
+  .man_intro .man_intro__name {
     font-size: 18px;
   }
-  .feedback_card .testimonials h4,
+  .feedback_card .testimonials .testimonials--intro,
   .feedback_text {
     max-width: 400px;
   }
@@ -1235,6 +1234,7 @@ header {
     left: 75%;
   }
   .top_news_section {
+    gap: 20px;
     align-items: center;
     flex-direction: column;
   }
@@ -1252,7 +1252,7 @@ header {
     align-items: center;
     gap: 12px;
   }
-  .project_title h2 {
+  .project_title .project_title__name {
     font-size: 28px;
     text-align: center;
   }
@@ -1312,7 +1312,7 @@ header {
   }
 
   .hero_section h1,
-  .hero_section p {
+  .hero_section .hero--paragraph--section {
     max-width: 350px;
   }
 
@@ -1337,7 +1337,7 @@ header {
   .s5_left h3 span {
     font-size: 22px;
   }
-  .card_name h3 {
+  .card_name .card--name--title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1350,7 +1350,7 @@ header {
   .solution span {
     font-size: 20px;
   }
-  .brochers_product p {
+  .brochers_product .brochures--name {
     font-size: 18px;
   }
 }
@@ -1362,7 +1362,7 @@ header {
   display: block;
 }
 @media (max-width: 420px) {
-  .card_name h3 {
+  .card_name .card--name--title {
     display: none;
   }
   .card_name .card_logo {

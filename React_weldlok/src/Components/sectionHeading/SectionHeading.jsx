@@ -4,8 +4,8 @@ export default function SectionHeading({ sectionName, sectionHeading }) {
   return (
     <>
       <div className="solution">
-        <p>{sectionName}</p>
-        <span>{sectionHeading}</span>
+        <p className="section--sub--name">{sectionName}</p>
+        <span className="sub__name__elem">{sectionHeading}</span>
       </div>
     </>
   );

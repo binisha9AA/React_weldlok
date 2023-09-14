@@ -63,7 +63,7 @@ export const Footer = () => {
                   <a href="#">
                     <img src={logo} alt="logo" />
                   </a>
-                  <p>
+                  <p className="footer--paragraph">
                     We are on a mission to invest in new products and systems
                     which will provide the Australian market with innovative
                     solutions.
@@ -124,13 +124,13 @@ export const Footer = () => {
               </div>
               <div className="copyright">
                 <div className="copyright_text">
-                  <p>
+                  <p className="copyright_text__trademark">
                     © 2023 by NEPEAN Building and Infrastructure. Weldlok® is a
                     registered trademark of NEPEAN Building & Infrastructure.
                   </p>
                 </div>
                 <div className="policy">
-                  <p>
+                  <p className="policy__terms">
                     Privacy Policy | Internet Policy | Terms & Conditions of
                     Sale | Conditions of Purchase
                   </p>

@@ -31,7 +31,7 @@ export const FeaturedProducts = () => {
                 <div className="feedback_card">
                   <div className="feedback_content">
                     <div className="testimonials">
-                      <h4>
+                      <h4 className="testimonials--intro">
                         "I have been a customer of Weldlok for over 5 years now,
                         in this time I have been nothing but pleased with the
                         service and quality. Weldlok always goes above and
@@ -43,7 +43,7 @@ export const FeaturedProducts = () => {
                         <img src={man} alt="" />
                       </div>
                       <div className="man_intro">
-                        <h4>PAUL MIRABITO</h4>
+                        <h4 className="man_intro__name">PAUL MIRABITO</h4>
                         <p>Murray Engineering</p>
                       </div>
                     </div>
@@ -82,7 +82,9 @@ export const FeaturedProducts = () => {
                   </div>
                   <div className="project_description">
                     <div className="project_title">
-                      <h2>Central Taiwan Innovation & Research Park</h2>
+                      <h2 className="project_title__name">
+                        Central Taiwan Innovation & Research Park
+                      </h2>
                     </div>
                     <div className="project_location">
                       <div className="client_location">
@@ -95,7 +97,7 @@ export const FeaturedProducts = () => {
                       </div>
                     </div>
                     <div className="project_paragraph">
-                      <p>
+                      <p className="project_paragraph__elem">
                         Bio-architecture Formosana, an architectural firm known
                         for their commitment to eco-friendly buildings, achieved
                         the highest grade of Taiwan’s green building label with

@@ -27,7 +27,7 @@ const OurBrochures = () => {
                 {brochuresData.map((brochure) => (
                   <div className="brochers_product" key={brochure.id}>
                     <img src={brochure.image} alt="" />
-                    <p>{brochure.title}</p>
+                    <p className="brochures--name">{brochure.title}</p>
                   </div>
                 ))}
               </div>
@@ -40,7 +40,7 @@ const OurBrochures = () => {
                     <img src={diamond} alt="" />
                   </div>
                   <div className="pdf_product_name">
-                    <h2>{brochure.title}</h2>
+                    <h2 className="brocheur--title">{brochure.title}</h2>
                   </div>
                   <ViewProdcutButton productText={'Read Full Case Study'} />
                 </div>
