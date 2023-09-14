@@ -26,7 +26,8 @@ body {
   padding-left: 1rem;
 }
 .site {
-  background-image: url('../images/hero\ bg.svg');
+  background-image: url('../assets/images/hero\ bg.svg');
+  background-color: #171717;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -248,7 +249,7 @@ header {
   transition: opacity 0.3s ease-in-out;
 }
 .card:hover .card_arrow {
-  content: url('../images/right-arrow.svg');
+  content: url('../assets/images/right-arrow.svg');
   position: absolute;
   top: 92px;
   left: 82%;
@@ -265,6 +266,7 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 25px;
+  max-width: 1174px;
 }
 .about_text {
   color: var(--white);
@@ -273,7 +275,7 @@ header {
   gap: 32px;
   max-width: 575px;
 }
-.about_text .about_title h3 {
+.about_text .about_title .about_name {
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -291,7 +293,7 @@ header {
   grid-gap: 12px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.about_counts h2 {
+.about_counts .count_num {
   color: var(--white);
   font-size: 38px;
   font-weight: 700;
@@ -306,7 +308,8 @@ header {
   text-transform: uppercase;
 }
 .wrapper .image img {
-  max-height: 600px;
+  height: 100%;
+  object-fit: cover;
 }
 /* section three starts here */
 .sectionthree {
@@ -1056,9 +1059,6 @@ header {
   }
 }
 @media (max-width: 992px) {
-  .subscribe_text h2 {
-    font-size: 20px;
-  }
   .show-mobile-nav {
     background-color: #090f15;
     position: absolute;
@@ -1157,14 +1157,14 @@ header {
   .wrapper .image img {
     max-width: 300px;
   }
-  .about_text .about_title h3,
+  .about_text .about_title .about_name,
   .about_counts span {
     font-size: 14px;
   }
   .about_text .about_title h4 {
     font-size: 18px;
   }
-  .about_counts h2 {
+  .about_counts .count_num {
     font-size: 20px;
   }
   .about_text {
@@ -1214,6 +1214,11 @@ header {
   }
 }
 @media (max-width: 768px) {
+  .about_text .about_title .about_title,
+  .about_counts .counts,
+  .about_paragraph .description {
+    text-align: center;
+  }
   .about_buttons {
     text-align: center;
   }
@@ -1280,7 +1285,7 @@ header {
   .about_text {
     margin-inline: auto;
   }
-  .about_text .about_title h3 {
+  .about_text .about_title .about_name {
     text-align: center;
   }
   .grid_image {

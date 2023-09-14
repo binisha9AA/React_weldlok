@@ -20,15 +20,15 @@ export const About = () => {
               </div>
               <div className="about_text">
                 <div className="about_title">
-                  <h3>about weldlok</h3>
-                  <h4>
+                  <h3 className="about_name">about weldlok</h3>
+                  <h4 className="about_title">
                     Weldlok and Balltube: Trusted Australian brands for 60+
                     years, serving infrastructure, mining, industrial, civil,
                     and fabrication.
                   </h4>
                 </div>
                 <div className="about_paragraph">
-                  <p>
+                  <p className="description">
                     We are specialists in the design and supply of high quality,
                     durable grating, industrial and modular handrail, steel
                     flooring, FRP flooring, and drainage grates and covers.
@@ -38,8 +38,8 @@ export const About = () => {
                 <div className="about_counts">
                   {userCount.map((item) => {
                     return (
-                      <div key={item.id}>
-                        <h2>{item.count}</h2>
+                      <div key={item.id} className="counts">
+                        <h2 className="count_num">{item.count}</h2>
                         <span>{item.title}</span>
                       </div>
                     );
