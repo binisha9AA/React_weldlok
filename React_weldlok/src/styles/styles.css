@@ -1056,6 +1056,9 @@ header {
   }
 }
 @media (max-width: 992px) {
+  .subscribe_text h2 {
+    font-size: 20px;
+  }
   .show-mobile-nav {
     background-color: #090f15;
     position: absolute;

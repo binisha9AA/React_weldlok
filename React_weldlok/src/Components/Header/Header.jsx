@@ -14,7 +14,7 @@ import {
 export const Header = () => {
   return (
     <>
-      {/* <Navigation /> */}
+      <Navigation />
       {/* <Routes>
         <Route path="./Pages/Homee.jsx" element={<Homee />} />
         <Route
