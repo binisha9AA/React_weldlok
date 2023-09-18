@@ -1,43 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
+import { IconContext } from 'react-icons';
 import logo from '../../assets/images/logo.svg';
 import phone from '../../assets/images/phone.svg';
 import arrowDow from '../../assets/images/arrowDown.svg';
 import { HeroSection } from './HeroSection';
+import { RxCross2 } from 'react-icons/rx';
 
 export const Header = () => {
-  // Initialize hamburger and navMenu as useRef
-  const hamburgerRef = React.useRef(null);
-  const navMenuRef = React.useRef(null);
+  const [mobileNavVisible, setMobileNavVisible] = useState(false);
 
-  // Use useEffect to add event listeners when the component mounts
-  useEffect(() => {
-    const mobileMenu = () => {
-      hamburgerRef.current.classList.toggle('active');
-      navMenuRef.current.classList.toggle('active');
-    };
-
-    hamburgerRef.current.addEventListener('click', mobileMenu);
-
-    const navLink = document.querySelectorAll('.nav-link');
-    navLink.forEach((n) => n.addEventListener('click', closeMenu));
-
-    function closeMenu() {
-      hamburgerRef.current.classList.remove('active');
-      navMenuRef.current.classList.remove('active');
-    }
-
-    const mobileNav = document.querySelector('.mobile_nav');
-    hamburgerRef.current.addEventListener('click', function () {
-      mobileNav.classList.toggle('show-mobile-nav');
-    });
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      hamburgerRef.current.removeEventListener('click', mobileMenu);
-      navLink.forEach((n) => n.removeEventListener('click', closeMenu));
-    };
-  }, []);
-
+  // Function to toggle the mobile navigation menu visibility
+  const toggleMobileNav = () => {
+    setMobileNavVisible(!mobileNavVisible);
+  };
   return (
     <>
       <div className="site">
@@ -50,39 +25,39 @@ export const Header = () => {
                 </a>
               </div>
               <nav className="nav">
-                <div class="mid_nav">
-                  <ul class="nav-menu">
+                <div className="mid_nav">
+                  <ul className="nav-menu">
                     <li>
-                      <a href="" class="nav-link">
+                      <a href="" className="nav-link">
                         Home
                       </a>
                     </li>
                     <li>
-                      <a href="#our_products" class="nav-link">
+                      <a href="#our_products" className="nav-link">
                         Our Products <img src={arrowDow} />
                       </a>
                     </li>
                     <li>
-                      <a href="" class="nav-link">
+                      <a href="" className="nav-link">
                         Customers
                         <img src={arrowDow} />
                       </a>
                     </li>
                     <li>
-                      <a href="#about" class="nav-link">
+                      <a href="#about" className="nav-link">
                         About us
                         <img src={arrowDow} />
                       </a>
                     </li>
 
                     <li>
-                      <a href="#news" class="nav-link">
+                      <a href="#news" className="nav-link">
                         News
                         <img src={arrowDow} />
                       </a>
                     </li>
                     <li>
-                      <a href="#footer" class="nav-link">
+                      <a href="#footer" className="nav-link">
                         Contact us
                       </a>
                     </li>
@@ -97,81 +72,80 @@ export const Header = () => {
                   </div>
                 </div>
               </nav>
-              <div className="mobile_nav">
-                <div className="mobile_nav_menu">
-                  <ul>
-                    <li>
-                      <a href="">Home</a>
-                    </li>
-                    <li>
-                      <a href="#our_products">
-                        Our Products{' '}
-                        <img src="../images/arrowDown.svg" alt="down arrow" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        Customers
-                        <img src="../images/arrowDown.svg" alt="down arrow" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#about">
-                        About us
-                        <img src="../images/arrowDown.svg" alt="down arrow" />
-                      </a>
-                    </li>
+              {mobileNavVisible ? (
+                <div className="mobile_nav">
+                  <div
+                    className={`mobile_nav_menu ${
+                      mobileNavVisible ? 'active' : ''
+                    }`}
+                  >
+                    <ul>
+                      <li>
+                        <a href="">Home</a>
+                      </li>
+                      <li>
+                        <a href="#our_products">
+                          Our Products <img src={arrowDow} />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          Customers
+                          <img src={arrowDow} />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#about">
+                          About us
+                          <img src={arrowDow} />
+                        </a>
+                      </li>
 
-                    <li>
-                      <a href="#news" className="nav-link">
-                        News
-                        <img src="../images/arrowDown.svg" alt="down arrow" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#footer" className="nav-link">
-                        Contact us
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="mobile_nav_phone">
-                  <div className="mobile_nav_ph">
-                    <img src={phone} alt="" />
+                      <li>
+                        <a href="#news" className="nav-link">
+                          News
+                          <img src={arrowDow} />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#footer" className="nav-link">
+                          Contact us
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-                  <div className="mobile_nav_no">
-                    <p>1800 935 356</p>
+                  <div className="mobile_nav_phone">
+                    <div>
+                      <img src={phone} alt="" />
+                    </div>
+                    <div className="mobile_nav_no">
+                      <p>1800 935 356</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="hamburger" ref={hamburgerRef}>
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-              </div>
+              ) : null}
+              <IconContext.Provider
+                value={{ color: '#fff', className: 'hamburger_close' }}
+              >
+                <div className="hamburger" onClick={toggleMobileNav}>
+                  {mobileNavVisible ? (
+                    <RxCross2 />
+                  ) : (
+                    <div>
+                      <span className="bar"></span>
+                      <span className="bar"></span>
+                      <span className="bar"></span>
+                    </div>
+                  )}
+                </div>
+              </IconContext.Provider>
+              ;
             </div>
           </div>
         </header>
         {/* hero section starts here  */}
-
         <HeroSection />
       </div>
-
-      {/* <Navigation /> */}
-      {/* <Routes>
-        <Route path="./Pages/Homee.jsx" element={<Homee />} />
-        <Route
-          path="./Components/sections/OurProducts.jsx"
-          element={<OurProducts />}
-        />
-        <Route
-          path="./Components/sections/Customers.jsx"
-          element={<Customers />}
-        />
-        <Route path="./Components/sections/About.jsx" element={<About />} />x
-        <Route path="./Components/sections/News.jsx" element={<News />} />
-        <Route path="./Components/Footer/Footer.jsx" element={<Footer />} />
-      </Routes> */}
     </>
   );
 };

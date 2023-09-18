@@ -5,7 +5,6 @@ import industr from '../../assets/images/industrial img.png';
 import industrLogo from '../../assets/images/Industrial.svg';
 import civil from '../../assets/images/Civil.svg';
 import arch from '../../assets/images/Architectural.svg';
-import arrowDow from '../../assets/images/arrowDown.svg';
 export const HeroSection = () => {
   return (
     <>

@@ -59,7 +59,7 @@ export const FeaturedProducts = () => {
                     </h3>
                   </div>
                   <div className="s5_right">
-                    <button class="btn find_more">
+                    <button className="btn find_more">
                       <a href="">
                         <img src={arrowRight} alt="" />
                         <p>Request A Quote</p>

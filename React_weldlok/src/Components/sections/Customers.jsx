@@ -72,7 +72,7 @@ export const Customers = () => {
               {customers.map((customer) => (
                 <div className="s4grid_one" key={customer.id}>
                   <img src={customer.logo} alt={customer.cusName} />
-                  <p>{customer.cusName}</p>
+                  <p className="s4grid_one__customer">{customer.cusName}</p>
                 </div>
               ))}
             </div>
