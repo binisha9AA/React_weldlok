@@ -884,9 +884,7 @@ header {
   .page_links ul {
     gap: 10px;
   }
-  .news_events {
-    border: 1px solid var(--light-gray);
-  }
+
   .news_articles,
   .bottom_news_section .news_headline {
     width: 100%;
