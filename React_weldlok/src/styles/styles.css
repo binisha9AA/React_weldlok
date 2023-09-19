@@ -575,7 +575,6 @@ header {
 .client_location,
 .client_info {
   display: flex;
-  justify-content: space-between;
   gap: 16px;
 }
 .client_location > *,
@@ -585,9 +584,7 @@ header {
   font-weight: 600;
   line-height: 28px;
 }
-.client_info p {
-  text-align: right;
-}
+
 .client_info {
   padding: 9px 0;
 }
@@ -903,7 +900,6 @@ header {
   .article_image {
     width: 100%;
   }
-  .article_image img,
   .article_image img {
     max-width: unset;
   }
